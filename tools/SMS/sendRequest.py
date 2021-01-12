@@ -56,7 +56,7 @@ class Service:
     # Send message
     def sendMessage(self, phone):
         url = self.service["url"]
-        #print("Sending message.. | URL: (" + getDomain(url) + ") >> STATUS:", end = " ")
+        print("Sending message.. | URL: (" + getDomain(url) + ") >> STATUS:", end = " ")
         payload, dataType = self.parseData(phone)
 
         # Headers for request
@@ -95,7 +95,7 @@ class Service:
             elif r.status_code == 429:
                 print("[TOO MANY REQUESTS]" + error)
             else:
-                #print(r.text)
+                print(r.text)
                 print("[" + str(r.status_code) + "]" + error)
             
             return r.status_code
